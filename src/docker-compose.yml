@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  frontend:
+    container_name: react-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: react-app
+    ports:
+      - 3000:80
+    environment:
+      - NODE_ENV=production
+
+  backend:
+    container_name: backend-app
+    image: backend-app
+    ports:
+      - 3080:5080
